@@ -102,24 +102,24 @@ body,
     width: 25px;
 }
 
-.main header .space{
+.main header .space {
     margin: 0 10px;
 }
 
-.main header .row{
+.main header .row {
     display: flex;
     align-items: center;
 }
 
-.main header .row svg{
+.main header .row svg {
     padding-right: 5px;
 }
 
-.main header .row .redIcon svg{
+.main header .row .redIcon svg {
     color: red;
 }
 
-.main header .row .blueIcon svg{
+.main header .row .blueIcon svg {
     color: blue;
 }
 
@@ -137,18 +137,74 @@ body,
 
 .main header .ant-divider-vertical {
     height: 1.9em !important;
-    border-inline-start: 2px solid #0505051b!important;
+    border-inline-start: 2px solid #0505051b !important;
 }
 
 /* content */
 
 .content {
     background-color: #f2f2f2;
-    height: calc(100% - 80px);
+    height: calc(100% - 60px);
     border-radius: 0 10px 0;
-    padding: 10px;
 }
 
 .content .ant-tabs-tab:first-child {
-    margin: 0 0 0 32px !important;
+    margin: 0 10px 0 32px !important;
+    padding: 0 16px !important;
+}
+
+/* override */
+
+.content .ant-tabs-nav::before {
+    border-bottom: 2px solid #0505051b !important;
+}
+
+/* tab page */
+
+.tabPage {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+}
+
+.tabPage h1 {
+    font-size: 30px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.tabPage .btn {
+    margin: 0 5px;
+    height: 38px;
+}
+
+.tabPage .btn:last-child {
+    margin: 0 5px 0 0;
+}
+
+.tabPage .spacer {
+    margin: 0 auto 0 5px;
+}
+
+.tabPage .ant-breadcrumb-link {
+    background-color: transparent !important;
+}
+
+.tabPage .square{
+    color: #1d4679;
+    border-color: #1d4679;
+    width: 40px;
+    background-color: #f2f2f2;
+}
+
+.tabPage .btn svg{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 3px;
+    left: 4px;
+}
+
+.tabPage .primaryBtn{
+    background-color: #1d4679;
 }

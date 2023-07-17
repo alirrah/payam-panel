@@ -1,4 +1,5 @@
 import { Tabs } from 'antd';
+import TabPage from "./tabpage";
 
 const onChange = (key) => {
     console.log(key);
@@ -7,37 +8,37 @@ const items = [
     {
         key: '1',
         label: `تجهیزات`,
-        children: `Content of Tab Pane 1`,
+        children: <TabPage />,
     },
     {
         key: '2',
         label: `مراکز عملیات امنیت`,
-        children: `Content of Tab Pane 2`,
+        children: <TabPage />,
     },
     {
         key: '3',
         label: `جمع کننده ها`,
-        children: `Content of Tab Pane 3`,
+        children: <TabPage />,
     },
     {
         key: '4',
         label: `حسگرها`,
-        children: `Content of Tab Pane 4`,
+        children: <TabPage />,
     },
     {
         key: '5',
         label: `پویشگرها`,
-        children: `Content of Tab Pane 4`,
+        children: <TabPage />,
     },
     {
         key: '6',
         label: `کویرئیز`,
-        children: `Content of Tab Pane 4`,
+        children: <TabPage />,
     },
     {
         key: '7',
         label: `شخص ثالث`,
-        children: `Content of Tab Pane 4`,
+        children: <TabPage />,
     },
 ];
 
@@ -46,6 +47,7 @@ function Content() {
     return (
         <section className="content">
             <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+
         </section>
     )
 }
