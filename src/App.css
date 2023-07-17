@@ -1,0 +1,70 @@
+/* use all the screen */
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    direction: rtl;
+    background-color: white;
+    box-sizing: content-box;
+}
+
+#root {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* react logo */
+.sidebar img {
+    width: 50px;
+    margin: 40px 0;
+}
+
+/*override ant desgin style */
+.sidebar .ant-menu-submenu-title {
+    flex-direction: column;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+}
+
+.sidebar ul {
+    width: 150px;
+    border-inline-end-style: none !important;
+    background: transparent!important;
+}
+
+.sidebar ul li {
+    padding: 0 !important;
+    text-align: center;
+}
+
+.sidebar ul li svg {
+    height: 30px;
+    width: 30px;
+}
+
+.sidebar .ant-menu-submenu-arrow {
+    display: none;
+}
+
+.sidebar .ant-badge-count {
+    direction: ltr;
+    line-height: normal !important;
+}
+
+/* main */
+
+.main {
+    width: 100%;
+    height: 100%;
+}
