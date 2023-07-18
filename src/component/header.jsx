@@ -28,12 +28,12 @@ function Header() {
             <Divider type="vertical" className="spacer" />
 
             <div className="space row">
-            <p>5/h</p>
+            <p className="leftDirection">5/h</p>
             <AimOutlined className="redIcon"/>
             </div>
 
             <div className="space row">
-                <p>120/s</p>
+                <p className="leftDirection">120/s</p>
                 <ArrowDownOutlined className="blueIcon"/>
             </div>
 
