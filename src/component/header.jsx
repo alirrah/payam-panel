@@ -1,5 +1,7 @@
-import { Badge, Dropdown, Divider, Avatar } from "antd";
+import { Badge, Dropdown, Divider, Avatar, Popover } from "antd";
 import { AimOutlined, ArrowDownOutlined, UserOutlined, DownOutlined, BellOutlined, InboxOutlined } from '@ant-design/icons';
+import Notification from "./notification";
+import Ticket from "./ticket";
 
 const items = [
     {
@@ -20,31 +22,47 @@ const items = [
 ];
 
 function Header() {
+
     return (
         <header>
-            <img src={require('./../image/logo512.png')} alt="your logo"/>
+            <img src={require('./../image/logo512.png')} alt="your logo" />
             <p>مرکز عملیات امنیت سایبری بانک ملت</p>
 
             <Divider type="vertical" className="spacer" />
 
             <div className="space row">
-            <p className="leftDirection">5/h</p>
-            <AimOutlined className="redIcon"/>
+                <p className="leftDirection">5/h</p>
+                <AimOutlined className="redIcon" />
             </div>
 
             <div className="space row">
                 <p className="leftDirection">120/s</p>
-                <ArrowDownOutlined className="blueIcon"/>
+                <ArrowDownOutlined className="blueIcon" />
             </div>
 
             <Divider type="vertical" />
 
-            <Badge count={20} className="notification bgspace">
-                <BellOutlined />
-            </Badge>
-            <Badge count={20} className="notification space">
-                <InboxOutlined />
-            </Badge>
+            <Popover
+                content={<Notification />}
+                title="اعلان ها"
+                trigger="click"
+                arrow={false}
+            >
+                <Badge count={20} className="notification bgspace">
+                    <BellOutlined />
+                </Badge>
+            </Popover>
+
+            <Popover
+                content={<Ticket />}
+                title="تیکت های منتظر رسیدگی"
+                trigger="click"
+                arrow={false}
+            >
+                <Badge count={20} className="notification space">
+                    <InboxOutlined />
+                </Badge>
+            </Popover>
 
             <Divider type="vertical" />
 
@@ -53,6 +71,7 @@ function Header() {
                     items,
                 }}
                 className="space"
+                trigger={['click']}
             >
                 <a href="#" onClick={(e) => e.preventDefault()} >
                     <Avatar size={30} icon={<UserOutlined />} />
