@@ -122,21 +122,30 @@ body,
     margin: 0 10px;
 }
 
+.main header .bgspace{
+    margin: 0 20px;
+}
+
 .main header .row {
     display: flex;
     align-items: center;
 }
 
 .main header .row svg {
-    padding-right: 5px;
+    vertical-align: 5px;
 }
 
 .main header .row .redIcon svg {
+    padding-right: 2px;
     color: #ff4d4f;
 }
 
 .main header .row .blueIcon svg {
     color: rgb(64, 150, 255);
+}
+
+.main header .ant-avatar{
+    border: 2px solid #1d4679;
 }
 
 /*override spacer color */

@@ -20,7 +20,7 @@ const items = [
         getItem('مورد سه', '3'),
         getItem('مورد چهار', '4'),
     ]),
-    getItem('گزارش ها', 'sub2', <Badge count={2} offset={[15, 0]}>
+    getItem('گزارش ها', 'sub2', <Badge count={2} dot offset={[15, 0]}>
         <FundOutlined />
     </Badge>, [
         getItem('مورد پنج', '5'),

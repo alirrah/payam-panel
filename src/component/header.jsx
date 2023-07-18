@@ -3,18 +3,18 @@ import { AimOutlined, ArrowDownOutlined, UserOutlined, DownOutlined, BellOutline
 
 const items = [
     {
-        label: '1st menu item',
+        label: 'مورد اول',
         key: '0',
     },
     {
-        label: '2nd menu item',
+        label: 'مورد دوم',
         key: '1',
     },
     {
         type: 'divider',
     },
     {
-        label: '3rd menu item',
+        label: 'مورد سوم',
         key: '3',
     },
 ];
@@ -39,7 +39,7 @@ function Header() {
 
             <Divider type="vertical" />
 
-            <Badge count={20} className="notification space">
+            <Badge count={20} className="notification bgspace">
                 <BellOutlined />
             </Badge>
             <Badge count={20} className="notification space">
