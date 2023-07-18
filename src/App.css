@@ -55,7 +55,9 @@ body,
     padding: 15px 0 0 !important;
 }
 
-.sidebar .ant-menu-submenu-title:hover, .sidebar .ant-menu-item:hover, .ant-dropdown-menu-item-active {
+.ant-menu-submenu-title:hover,
+.ant-menu-item:hover,
+.ant-dropdown-menu-item-active {
     background-color: rgba(64, 150, 255, 0.06) !important;
     color: rgb(64, 150, 255) !important;
 }
@@ -85,8 +87,9 @@ body,
     line-height: normal !important;
 }
 
-.sidebar sup, .main header sup{
-    padding-top: 2px!important;
+.sidebar sup,
+.main header sup {
+    padding-top: 2px !important;
 }
 
 /* main */
@@ -122,7 +125,7 @@ body,
     margin: 0 10px;
 }
 
-.main header .bgspace{
+.main header .bgspace {
     margin: 0 20px;
 }
 
@@ -144,7 +147,7 @@ body,
     color: rgb(64, 150, 255);
 }
 
-.main header .ant-avatar{
+.main header .ant-avatar {
     border: 2px solid #1d4679;
 }
 
@@ -165,7 +168,7 @@ body,
     border-inline-start: 2px solid #0505051b !important;
 }
 
-.main header .leftDirection{
+.main header .leftDirection {
     direction: ltr;
 }
 
@@ -236,4 +239,23 @@ body,
 
 .tabPage .primaryBtn {
     background-color: #1d4679;
+}
+
+/*doted badget */
+
+.dotedBadget .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+}
+
+.dotedBadget svg {
+    transition: 0.25s linear;
+}
+
+.ant-menu-submenu-title:hover svg {
+    color: rgb(64, 150, 255) !important;
+    transition: 0.25s linear;
 }

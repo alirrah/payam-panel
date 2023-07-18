@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DashboardOutlined, DeploymentUnitOutlined, AimOutlined, FundOutlined, BulbOutlined, SettingOutlined, SecurityScanOutlined } from '@ant-design/icons';
 import { Menu, Badge } from 'antd';
+import DotedBadget from './doted-badge';
 
 function getItem(label, key, icon, children, type) {
     return {
@@ -12,56 +13,42 @@ function getItem(label, key, icon, children, type) {
     };
 }
 const items = [
-    getItem('پیشخوان ها', 'sub1', <Badge count={20} offset={[15, 0]}>
-        <DashboardOutlined />
-    </Badge>, [
+    getItem('پیشخوان ها', 'sub1', <DotedBadget count={45} icon={<DashboardOutlined />}/>, [
         getItem('مورد یک', '1'),
         getItem('مورد دو', '2'),
         getItem('مورد سه', '3'),
         getItem('مورد چهار', '4'),
     ]),
-    getItem('گزارش ها', 'sub2', <Badge count={2} dot offset={[15, 0]}>
-        <FundOutlined />
-    </Badge>, [
+    getItem('گزارش ها', 'sub2', <DotedBadget count={2} icon={<FundOutlined />}/>, [
         getItem('مورد پنج', '5'),
         getItem('مورد شش', '6'),
         getItem('زیر منو', 'sub3', null, [getItem('مورد هفت', '7'), getItem('مورد هشت', '8')]),
     ]),
-    getItem('حوادث', 'sub4', <Badge count={0} offset={[15, 0]}>
-        <AimOutlined />
-    </Badge>, [
+    getItem('حوادث', 'sub4', <DotedBadget count={18} icon={<AimOutlined />}/>, [
         getItem('مورد نه', '9'),
         getItem('مورد ده', '10'),
         getItem('مورد یازده', '11'),
         getItem('مورد دوازده', '12'),
     ]),
-    getItem('رویدادها', 'sub5', <Badge count={9990} offset={[15, 0]}>
-        <SecurityScanOutlined />
-    </Badge>, [
+    getItem('رویدادها', 'sub5', <DotedBadget count={990} icon={<SecurityScanOutlined />}/>, [
         getItem('مورد سیزده', '13'),
         getItem('مورد چهارده', '14'),
         getItem('مورد پانزده', '15'),
         getItem('مورد شانزده', '16'),
     ]),
-    getItem('دانش', 'sub6', <Badge count={50} offset={[15, 0]}>
-        <BulbOutlined />
-    </Badge>, [
+    getItem('دانش', 'sub6', <DotedBadget count={0} icon={<BulbOutlined />}/>, [
         getItem('مورد هفده', '17'),
         getItem('مورد هجده', '18'),
         getItem('مورد نوزده', '19'),
         getItem('مورد بیست', '20'),
     ]),
-    getItem('محیط', 'sub7', <Badge count={10} offset={[15, 0]}>
-        <DeploymentUnitOutlined />
-    </Badge>, [
+    getItem('محیط', 'sub7', <DotedBadget count={10} icon={<DeploymentUnitOutlined />}/>, [
         getItem('مورد بیست و یک', '21'),
         getItem('مورد بیست و دو', '22'),
         getItem('مورد بیست و سه', '23'),
         getItem('مورد بیست و چهار', '24'),
     ]),
-    getItem('تنظیمات', 'sub8', <Badge count={0} offset={[15, 0]}>
-        <SettingOutlined />
-    </Badge>, [
+    getItem('تنظیمات', 'sub8', <DotedBadget count={0} icon={<SettingOutlined />}/>, [
         getItem('مورد بیست و پنج', '25'),
         getItem('مورد بیست و شش', '26'),
         getItem('مورد بیست و هفت', '27'),
