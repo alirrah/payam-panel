@@ -290,7 +290,7 @@ body,
 .notification .description {
     display: block;
     white-space: nowrap;
-    width: 300px;
+    width: 280px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -300,10 +300,15 @@ body,
     align-items: center;
 }
 
-.notification .closeBtn{
+.notification .closeBtn {
     position: absolute;
-    left: 15px;
-    top: 41px;
+    left: 20px;
+    top: 40px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.ant-popover {
+    inset: 50.125px auto auto 10px !important;
 }
 
 .ant-popover-inner {
@@ -311,12 +316,34 @@ body,
     width: 350px;
 }
 
-.ant-popover-title{
+.ant-popover-title {
     padding: 12px;
+    margin-bottom: 0!important;
     background-color: #f2f2f2;
 }
 
-.notification .ant-list-footer{
+.notification .ant-list-footer {
     display: flex;
     justify-content: center;
+    border-top: 1px solid #333;
 }
+
+.notification .ant-spin-container {
+    margin: 5px;
+    height: 368px;
+    overflow: auto;
+}
+
+.notification .ant-list-items li:last-child{
+    border-bottom: none!important;
+}
+.notification .ant-spin-container::-webkit-scrollbar {
+    width: 5px; 
+  }
+  .notification .ant-spin-container::-webkit-scrollbar-thumb { /* Foreground */
+    background: #f2f2f2;
+    border-radius: 5px;
+  }
+  .notification .ant-spin-container::-webkit-scrollbar-track { /* Background */
+    background: #fff;
+  }

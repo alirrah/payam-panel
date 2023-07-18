@@ -44,6 +44,21 @@ const data = [
         time: '5 ساعت پیش',
         description: 'ورود از آی پی 192.168.87.10 در تاریخ 12 مهر 1402 می باشد.'
     },
+    {
+        icon: <LoginOutlined
+            style={{
+                color: "#52c41a",
+                backgroundColor: "#52c41a22",
+                border: "1px solid",
+                borderRadius: "5px"
+            }}
+        />,
+        title: 'ورود موفق به سامانه',
+        danger: false,
+        time: '3 ساعت پیش',
+        description: 'ورود از آی پی 192.168.87.10 در تاریخ 12 مهر 1402 می باشد.'
+
+    },
 ];
 
 function Notification() {
