@@ -1,3 +1,5 @@
+@import url("./font/Vazirmatn-font-face.css");
+
 /* use all the screen */
 html,
 body,
@@ -8,6 +10,10 @@ body,
     direction: rtl;
     background-color: white;
     box-sizing: content-box;
+}
+
+* {
+    font-family: Vazirmatn, sans-serif;
 }
 
 #root {
@@ -46,6 +52,12 @@ body,
     height: auto !important;
     overflow: visible !important;
     padding: 0 !important;
+    padding: 15px 0 0 !important;
+}
+
+.sidebar .ant-menu-submenu-title:hover, .sidebar .ant-menu-item:hover, .ant-dropdown-menu-item-active {
+    background-color: rgba(64, 150, 255, 0.06) !important;
+    color: rgb(64, 150, 255) !important;
 }
 
 .sidebar ul {
@@ -71,6 +83,10 @@ body,
 .sidebar .ant-badge-count {
     direction: ltr;
     line-height: normal !important;
+}
+
+.sidebar sup, .main header sup{
+    padding-top: 2px!important;
 }
 
 /* main */
@@ -116,11 +132,11 @@ body,
 }
 
 .main header .row .redIcon svg {
-    color: red;
+    color: #ff4d4f;
 }
 
 .main header .row .blueIcon svg {
-    color: blue;
+    color: rgb(64, 150, 255);
 }
 
 /*override spacer color */
@@ -144,7 +160,7 @@ body,
 
 .content {
     background-color: #f2f2f2;
-    height: calc(100% - 60px);
+    height: calc(100% - 67px);
     border-radius: 0 10px 0;
 }
 
@@ -190,14 +206,14 @@ body,
     background-color: transparent !important;
 }
 
-.tabPage .square{
+.tabPage .square {
     color: #1d4679;
     border-color: #1d4679;
     width: 40px;
     background-color: #f2f2f2;
 }
 
-.tabPage .btn svg{
+.tabPage .btn svg {
     width: 18px;
     height: 18px;
     position: relative;
@@ -205,6 +221,6 @@ body,
     left: 4px;
 }
 
-.tabPage .primaryBtn{
+.tabPage .primaryBtn {
     background-color: #1d4679;
 }

@@ -3,11 +3,11 @@ import { AimOutlined, ArrowDownOutlined, UserOutlined, DownOutlined, BellOutline
 
 const items = [
     {
-        label: <a href="https://www.antgroup.com">1st menu item</a>,
+        label: '1st menu item',
         key: '0',
     },
     {
-        label: <a href="https://www.aliyun.com">2nd menu item</a>,
+        label: '2nd menu item',
         key: '1',
     },
     {
@@ -22,7 +22,7 @@ const items = [
 function Header() {
     return (
         <header>
-            <img src={require('./../image/logo512.png')} />
+            <img src={require('./../image/logo512.png')} alt="your logo"/>
             <p>مرکز عملیات امنیت سایبری بانک ملت</p>
 
             <Divider type="vertical" className="spacer" />
@@ -54,7 +54,7 @@ function Header() {
                 }}
                 className="space"
             >
-                <a onClick={(e) => e.preventDefault()}>
+                <a href="#" onClick={(e) => e.preventDefault()} >
                     <Avatar size={30} icon={<UserOutlined />} />
                     <DownOutlined className="arrowIcon" />
                 </a>

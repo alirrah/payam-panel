@@ -15,63 +15,63 @@ const items = [
     getItem('پیشخوان ها', 'sub1', <Badge count={20} offset={[15, 0]}>
         <DashboardOutlined />
     </Badge>, [
-        getItem('Option 1', '1'),
-        getItem('Option 2', '2'),
-        getItem('Option 3', '3'),
-        getItem('Option 4', '4'),
+        getItem('مورد یک', '1'),
+        getItem('مورد دو', '2'),
+        getItem('مورد سه', '3'),
+        getItem('مورد چهار', '4'),
     ]),
     getItem('گزارش ها', 'sub2', <Badge count={2} offset={[15, 0]}>
         <FundOutlined />
     </Badge>, [
-        getItem('Option 5', '5'),
-        getItem('Option 6', '6'),
-        getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+        getItem('مورد پنج', '5'),
+        getItem('مورد شش', '6'),
+        getItem('زیر منو', 'sub3', null, [getItem('مورد هفت', '7'), getItem('مورد هشت', '8')]),
     ]),
     getItem('حوادث', 'sub4', <Badge count={0} offset={[15, 0]}>
         <AimOutlined />
     </Badge>, [
-        getItem('Option 9', '9'),
-        getItem('Option 10', '10'),
-        getItem('Option 11', '11'),
-        getItem('Option 12', '12'),
+        getItem('مورد نه', '9'),
+        getItem('مورد ده', '10'),
+        getItem('مورد یازده', '11'),
+        getItem('مورد دوازده', '12'),
     ]),
     getItem('رویدادها', 'sub5', <Badge count={9990} offset={[15, 0]}>
         <SecurityScanOutlined />
     </Badge>, [
-        getItem('Option 9', '13'),
-        getItem('Option 10', '14'),
-        getItem('Option 11', '15'),
-        getItem('Option 12', '16'),
+        getItem('مورد سیزده', '13'),
+        getItem('مورد چهارده', '14'),
+        getItem('مورد پانزده', '15'),
+        getItem('مورد شانزده', '16'),
     ]),
     getItem('دانش', 'sub6', <Badge count={50} offset={[15, 0]}>
         <BulbOutlined />
     </Badge>, [
-        getItem('Option 9', '17'),
-        getItem('Option 10', '18'),
-        getItem('Option 11', '19'),
-        getItem('Option 12', '20'),
+        getItem('مورد هفده', '17'),
+        getItem('مورد هجده', '18'),
+        getItem('مورد نوزده', '19'),
+        getItem('مورد بیست', '20'),
     ]),
     getItem('محیط', 'sub7', <Badge count={10} offset={[15, 0]}>
         <DeploymentUnitOutlined />
     </Badge>, [
-        getItem('Option 9', '21'),
-        getItem('Option 10', '22'),
-        getItem('Option 11', '23'),
-        getItem('Option 12', '24'),
+        getItem('مورد بیست و یک', '21'),
+        getItem('مورد بیست و دو', '22'),
+        getItem('مورد بیست و سه', '23'),
+        getItem('مورد بیست و چهار', '24'),
     ]),
     getItem('تنظیمات', 'sub8', <Badge count={0} offset={[15, 0]}>
         <SettingOutlined />
     </Badge>, [
-        getItem('Option 9', '25'),
-        getItem('Option 10', '26'),
-        getItem('Option 11', '27'),
-        getItem('Option 12', '28'),
-        getItem('Option 12', '29'),
-        getItem('Option 12', '30'),
-        getItem('Option 12', '31'),
-        getItem('Option 12', '32'),
-        getItem('Option 12', '33'),
-        getItem('Option 12', '34'),
+        getItem('مورد بیست و پنج', '25'),
+        getItem('مورد بیست و شش', '26'),
+        getItem('مورد بیست و هفت', '27'),
+        getItem('مورد بیست وهشت', '28'),
+        getItem('مورد بیست و نه', '29'),
+        getItem('مورد سی', '30'),
+        getItem('مورد سی و یک', '31'),
+        getItem('مورد سی و دو', '32'),
+        getItem('مورد سی و سه', '33'),
+        getItem('مورد سی و چهار', '34'),
     ]),
 ];
 
@@ -93,7 +93,7 @@ function SidebarMenu() {
 
     return (
         <section className='sidebar'>
-            <img src={require('./../image/logo512.png')} />
+            <img src={require('./../image/logo512.png')} alt="ravin logo"/>
             <Menu
                 className='menu'
                 mode='inline'
