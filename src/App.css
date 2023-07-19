@@ -12,7 +12,8 @@ body,
     box-sizing: content-box;
 }
 
-* {
+*,
+.ant-tag {
     font-family: Vazirmatn, sans-serif;
 }
 
@@ -290,16 +291,19 @@ body,
     width: 30px;
 }
 
-.notification .ant-list-item-meta {
+.notification .ant-list-item-meta,
+.ticket .ant-list-item-meta {
     align-items: center !important;
 }
 
-.notification .ant-list-item {
+.notification .ant-list-item,
+.ticket .ant-list-item {
     flex-direction: column;
     align-items: flex-start;
 }
 
-.notification .ant-list-item-meta-content {
+.notification .ant-list-item-meta-content,
+.ticket .ant-list-item-meta-content {
     width: auto !important;
 }
 
@@ -350,44 +354,50 @@ body,
     background-color: #f2f2f2;
 }
 
-.notification .ant-list-footer {
+.notification .ant-list-footer,
+.ticket .ant-list-footer {
     display: flex;
     justify-content: center;
     border-top: 2px solid #0505051b;
 }
 
-.notification .ant-spin-container {
+.notification .ant-spin-container,
+.ticket .ant-spin-container {
     margin: 5px;
     padding: 0 0 0 5px;
     height: 368px;
     overflow: auto;
 }
 
-.notification .ant-list-items li:last-child {
+.notification .ant-list-items li:last-child,
+.ticket .ant-list-items li:last-child {
     border-bottom: none !important;
 }
 
-.notification .ant-spin-container::-webkit-scrollbar {
+.notification .ant-spin-container::-webkit-scrollbar,
+.ticket .ant-spin-container::-webkit-scrollbar {
     width: 5px;
 }
 
-.notification .ant-spin-container::-webkit-scrollbar-thumb {
-    /* Foreground */
+.notification .ant-spin-container::-webkit-scrollbar-thumb,
+.ticket .ant-spin-container::-webkit-scrollbar-thumb {
     background: #f2f2f2;
     border-radius: 5px;
 }
 
-.notification .ant-spin-container::-webkit-scrollbar-track {
-    /* Background */
+.notification .ant-spin-container::-webkit-scrollbar-track,
+.ticket .ant-spin-container::-webkit-scrollbar-track {
     background: #fff;
 }
 
-.notification .ant-divider-vertical {
+.notification .ant-divider-vertical,
+.ticket .ant-divider-vertical {
     height: 1.9em !important;
     border-inline-start: 2px solid #0505051b !important;
 }
 
-.notification .ant-list-item {
+.notification .ant-list-item,
+.ticket .ant-list-item {
     border-block-end: 2px solid #0505051b !important;
 }
 
@@ -403,4 +413,19 @@ body,
     background-color: #52c41a22;
     border: 1px solid #52c41a;
     border-radius: 5px;
+}
+
+.ticket .ant-list-item {
+    padding: 12px !important;
+}
+
+.ticket .descriptionPart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ticket .description {
+    padding-left: 10px;
 }
