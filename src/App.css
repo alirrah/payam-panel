@@ -428,4 +428,5 @@ body,
 
 .ticket .description {
     padding-left: 10px;
+    color: rgba(0, 0, 0, 0.45);
 }
