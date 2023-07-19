@@ -121,6 +121,16 @@ body,
     width: 25px;
 }
 
+.main header .notification {
+    cursor: pointer;
+    transition: 0.25s linear;
+}
+
+.main header .notification:hover {
+    color: rgb(64, 150, 255);
+    transition: 0.25s linear;
+}
+
 .main header .space {
     margin: 0 10px;
 }
@@ -149,6 +159,17 @@ body,
 
 .main header .ant-avatar {
     border: 2px solid #1d4679;
+    transition: 0.25s linear;
+}
+
+.main header .ant-dropdown-trigger:hover .ant-avatar {
+    border: 2px solid rgb(64, 150, 255);
+    transition: 0.25s linear;
+}
+
+.main header .ant-dropdown-trigger:hover .arrowIcon svg {
+    color: rgb(64, 150, 255);
+    transition: 0.25s linear;
 }
 
 /*override spacer color */
@@ -301,10 +322,17 @@ body,
 }
 
 .notification .closeBtn {
+    cursor: pointer;
     position: absolute;
     left: 20px;
     top: 40px;
     color: rgba(0, 0, 0, 0.45);
+    transition: 0.25s linear;
+}
+
+.notification .closeBtn:hover {
+    color: #ff4d4f;
+    transition: 0.25s linear;
 }
 
 .ant-popover {
@@ -318,32 +346,61 @@ body,
 
 .ant-popover-title {
     padding: 12px;
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
     background-color: #f2f2f2;
 }
 
 .notification .ant-list-footer {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #333;
+    border-top: 2px solid #0505051b;
 }
 
 .notification .ant-spin-container {
     margin: 5px;
+    padding: 0 0 0 5px;
     height: 368px;
     overflow: auto;
 }
 
-.notification .ant-list-items li:last-child{
-    border-bottom: none!important;
+.notification .ant-list-items li:last-child {
+    border-bottom: none !important;
 }
+
 .notification .ant-spin-container::-webkit-scrollbar {
-    width: 5px; 
-  }
-  .notification .ant-spin-container::-webkit-scrollbar-thumb { /* Foreground */
+    width: 5px;
+}
+
+.notification .ant-spin-container::-webkit-scrollbar-thumb {
+    /* Foreground */
     background: #f2f2f2;
     border-radius: 5px;
-  }
-  .notification .ant-spin-container::-webkit-scrollbar-track { /* Background */
+}
+
+.notification .ant-spin-container::-webkit-scrollbar-track {
+    /* Background */
     background: #fff;
-  }
+}
+
+.notification .ant-divider-vertical {
+    height: 1.9em !important;
+    border-inline-start: 2px solid #0505051b !important;
+}
+
+.notification .ant-list-item {
+    border-block-end: 2px solid #0505051b !important;
+}
+
+.notification .danger svg {
+    color: #ff4d4f;
+    background-color: #ff4d4f22;
+    border: 1px solid #ff4d4f;
+    border-radius: 5px;
+}
+
+.notification .success svg {
+    color: #52c41a;
+    background-color: #52c41a22;
+    border: 1px solid #52c41a;
+    border-radius: 5px;
+}
