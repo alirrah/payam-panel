@@ -1,89 +1,90 @@
 import { List, Divider, Tag, Avatar } from 'antd';
-
-const data = [
-    {
-        icon: <Avatar shape="square" size="large" />,
-        title: 'درخواست برای افزایش منابع سرور ایمیل',
-        time: '3 ساعت پیش',
-        description: 'نگهداری سامانه',
-        tages: [
-            {
-                name: "فوری",
-                tag: "error",
-            },
-            {
-                name: "مهلت رسیدگی تا 2 روز دیگر",
-                tag: "warning"
-            },
-            {
-                name: "بررسی شده",
-                tag: "success"
-            }
-        ]
-    },
-    {
-        icon: <Avatar shape="square" size="large" />,
-        title: 'درخواست برای افزایش منابع سرور ایمیل',
-        time: '3 ساعت پیش',
-        description: 'نگهداری سامانه',
-        tages: [
-            {
-                name: "فوری",
-                tag: "error",
-            },
-            {
-                name: "مهلت رسیدگی تا 2 روز دیگر",
-                tag: "warning"
-            }
-        ]
-    },
-    {
-        icon: <Avatar shape="square" size="large" />,
-        title: 'درخواست برای افزایش منابع سرور ایمیل',
-        time: '3 ساعت پیش',
-        description: 'نگهداری سامانه',
-        tages: [
-            {
-                name: "فوری",
-                tag: "error",
-            },
-            {
-                name: "مهلت رسیدگی تا 2 روز دیگر",
-                tag: "warning"
-            }
-        ]
-    },
-    {
-        icon: <Avatar shape="square" size="large" />,
-        title: 'درخواست برای افزایش منابع سرور ایمیل',
-        time: '3 ساعت پیش',
-        description: 'نگهداری سامانه',
-        tages: [
-            {
-                name: "فوری",
-                tag: "error",
-            },
-            {
-                name: "مهلت رسیدگی تا 2 روز دیگر",
-                tag: "warning"
-            },
-            {
-                name: "فوری",
-                tag: "error",
-            },
-            {
-                name: "مهلت رسیدگی تا 2 روز دیگر",
-                tag: "warning"
-            },
-            {
-                name: "فوری",
-                tag: "error",
-            },
-        ]
-    },
-];
+import { useState } from 'react';
 
 function Ticket() {
+
+    const [data, setData] = useState([
+        {
+            icon: <Avatar shape="square" size="large" />,
+            title: 'درخواست برای افزایش منابع سرور ایمیل',
+            time: '3 ساعت پیش',
+            description: 'نگهداری سامانه',
+            tages: [
+                {
+                    name: "فوری",
+                    tag: "error",
+                },
+                {
+                    name: "مهلت رسیدگی تا 2 روز دیگر",
+                    tag: "warning"
+                },
+                {
+                    name: "بررسی شده",
+                    tag: "success"
+                }
+            ]
+        },
+        {
+            icon: <Avatar shape="square" size="large" />,
+            title: 'درخواست برای افزایش منابع سرور ایمیل',
+            time: '3 ساعت پیش',
+            description: 'نگهداری سامانه',
+            tages: [
+                {
+                    name: "فوری",
+                    tag: "error",
+                },
+                {
+                    name: "مهلت رسیدگی تا 2 روز دیگر",
+                    tag: "warning"
+                }
+            ]
+        },
+        {
+            icon: <Avatar shape="square" size="large" />,
+            title: 'درخواست برای افزایش منابع سرور ایمیل',
+            time: '3 ساعت پیش',
+            description: 'نگهداری سامانه',
+            tages: [
+                {
+                    name: "فوری",
+                    tag: "error",
+                },
+                {
+                    name: "مهلت رسیدگی تا 2 روز دیگر",
+                    tag: "warning"
+                }
+            ]
+        },
+        {
+            icon: <Avatar shape="square" size="large" />,
+            title: 'درخواست برای افزایش منابع سرور ایمیل',
+            time: '3 ساعت پیش',
+            description: 'نگهداری سامانه',
+            tages: [
+                {
+                    name: "فوری",
+                    tag: "error",
+                },
+                {
+                    name: "مهلت رسیدگی تا 2 روز دیگر",
+                    tag: "warning"
+                },
+                {
+                    name: "فوری",
+                    tag: "error",
+                },
+                {
+                    name: "مهلت رسیدگی تا 2 روز دیگر",
+                    tag: "warning"
+                },
+                {
+                    name: "فوری",
+                    tag: "error",
+                },
+            ]
+        },
+    ]);
 
     return (
         <>
