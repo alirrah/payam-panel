@@ -8,37 +8,37 @@ const items = [
     {
         key: '1',
         label: `تجهیزات`,
-        children: <TabPage />,
+        children: <TabPage title='تجهیزات'/>,
     },
     {
         key: '2',
         label: `مراکز عملیات امنیت`,
-        children: <TabPage />,
+        children: <TabPage title='مراکز عملیات امنیت'/>,
     },
     {
         key: '3',
         label: `جمع کننده ها`,
-        children: <TabPage />,
+        children: <TabPage title='جمع کننده ها'/>,
     },
     {
         key: '4',
         label: `حسگرها`,
-        children: <TabPage />,
+        children: <TabPage title='حسگرها'/>,
     },
     {
         key: '5',
         label: `پویشگرها`,
-        children: <TabPage />,
+        children: <TabPage title='پویشگرها'/>,
     },
     {
         key: '6',
         label: `کویرئیز`,
-        children: <TabPage />,
+        children: <TabPage title='کویرئیز'/>,
     },
     {
         key: '7',
         label: `شخص ثالث`,
-        children: <TabPage />,
+        children: <TabPage title='شخص ثالث'/>,
     },
 ];
 

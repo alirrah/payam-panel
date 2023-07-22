@@ -2,10 +2,10 @@ import { Breadcrumb, Button } from 'antd';
 import { PlusOutlined, ReloadOutlined, DownloadOutlined, SaveOutlined, FilterOutlined } from '@ant-design/icons';
 
 
-function TabPage() {
+function TabPage({title}) {
     return (
         <section className="tabPage">
-            <h1>عنوان صفحه</h1>
+            <h1>{title}</h1>
             <Breadcrumb
                 separator=">"
                 items={[
