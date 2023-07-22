@@ -82,6 +82,10 @@ function Ticket() {
                     name: "فوری",
                     tag: "error",
                 },
+                {
+                    name: "مهلت رسیدگی تا 2 روز دیگر",
+                    tag: "warning"
+                },
             ]
         },
     ]);

@@ -430,7 +430,10 @@ body,
     align-items: center;
 }
 
+.ticket .descriptionPart p , .ticket .descriptionPart span{
+    margin: 3px;
+}
+
 .ticket .description {
-    padding-left: 10px;
     color: rgba(0, 0, 0, 0.45);
 }
