@@ -1,13 +1,17 @@
 import { Tabs } from 'antd';
 import TabPage from "./tabpage";
+import PageContext from './context';
+import { useContext } from 'react';
+
 
 const onChange = (key) => {
     console.log(key);
 };
 
 
-function Content(props) {
+function Content() {
 
+    const number = useContext(PageContext)
     const items = [
         {
             key: '1',
@@ -50,7 +54,7 @@ function Content(props) {
     return (
         <section className="content">
             <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-            {props.index}
+            {number}
         </section>
     )
 }

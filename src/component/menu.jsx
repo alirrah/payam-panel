@@ -26,7 +26,8 @@ function SidebarMenu(props) {
             icon: icon,
             children: children,
             label: label,
-            onClick: () => (Number.isInteger(key) ? props.context(key) : null),
+            onClick: () => (Number.isInteger(key) ? props.changeNumber(key)
+            : null),
         };
     }
 
