@@ -73,7 +73,10 @@ function Notification() {
                             <p className='description'>{item.description}</p>
                             <a href="#">بیشتر</a>
                         </div>
-                        <CloseCircleOutlined className='closeBtn' onClick={() => removeItem(item.id)} />
+
+                        <a onClick={() => removeItem(item.id)}>
+                            <CloseCircleOutlined className='closeBtn' />
+                        </a>
                     </List.Item>
                 )}
             />
