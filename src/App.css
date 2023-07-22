@@ -124,10 +124,13 @@ body,
 
 .main header .notification {
     cursor: pointer;
+    border-radius: 50%;
+    padding: 2.5px;
     transition: 0.25s linear;
 }
 
 .main header .notification:hover {
+    background-color: rgba(64, 150, 255, 0.06);
     color: rgb(64, 150, 255);
     transition: 0.25s linear;
 }
@@ -430,7 +433,8 @@ body,
     align-items: center;
 }
 
-.ticket .descriptionPart p , .ticket .descriptionPart span{
+.ticket .descriptionPart p,
+.ticket .descriptionPart span {
     margin: 3px;
 }
 
