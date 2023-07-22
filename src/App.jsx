@@ -2,8 +2,7 @@ import './App.css';
 import SidebarMenu from './component/menu';
 import Header from './component/header';
 import Content from './component/content'
-import { useState, createContext, useContext } from 'react';
-
+import { useState } from 'react';
 
 function App() {
 
@@ -16,7 +15,7 @@ function App() {
       }} />
       <section className='main'>
         <Header />
-        <Content UserContext />
+        <Content index={number} />
       </section>
     </>
   );
