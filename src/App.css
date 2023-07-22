@@ -277,6 +277,10 @@ body,
     transition: 0.25s linear;
 }
 
+.dotedBadget {
+    color: inherit;
+}
+
 .ant-menu-submenu-title:hover svg {
     color: rgb(64, 150, 255) !important;
     transition: 0.25s linear;

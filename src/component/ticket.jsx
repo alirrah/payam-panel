@@ -108,8 +108,8 @@ function Ticket() {
                         />
                         <div className='descriptionPart'>
                             <p className='description'>{item.description}</p>
-                            {item.tages.map((tag) => (
-                                <Tag color={tag.tag}>{tag.name}</Tag>
+                            {item.tages.map((tag, index) => (
+                                <Tag key={index} color={tag.tag}>{tag.name}</Tag>
                             ))}
                         </div>
                     </List.Item>
