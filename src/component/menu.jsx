@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { DashboardOutlined, DeploymentUnitOutlined, AimOutlined, FundOutlined, BulbOutlined, SettingOutlined, SecurityScanOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import DotedBadget from './doted-badge';
 import axios from "axios";
@@ -23,6 +22,16 @@ function SidebarMenu(props) {
         }
     };
 
+    function getItem(label, key, icon, children, type) {
+        return {
+            key,
+            icon,
+            children,
+            label,
+            type,
+        };
+    }
+
     const CustomIcon = (type) => {
         const AntdIcon = AntdIcons[type]
         return <AntdIcon />
@@ -37,18 +46,32 @@ function SidebarMenu(props) {
                 }
             }
         ).then((response) => {
-            if (response.status == 200) {
+            if (response.status === 200) {
                 let result = response.data.result;
+                let menu = [];
                 for (let i = 0; i < result.length; i++) {
-                    setRootSubmenuKeys(prev => [...prev, result[i].key])
-                    //TODO: get count from back-end
-                    result[i].icon = <DotedBadget count={45} icon={CustomIcon(result[i].icon)} />
-                    for (let j = 0; j < result[i].children.length; j++) {
-                        //TODO: key should be change
-                        result[i].children[j].onClick = () => props.changeNumber(i * j + parseInt(result[i].children[j].key))
+                    menu.push({ key: result[i].order, icon: null, children: [], label: result[i].label, type: null })
+                    for (let j = 0; j < result[i].subMenus.length; j++) {
+                        menu[i].children.push({ key: result[i].subMenus[j].order, icon: null, children: [], label: result[i].subMenus[j].label, type: null });
+                        if (result[i].subMenus[j].useAjaxTabs) {
+                            for (let h = 0; h < result[i].subMenus[j].tabs.length; h++) {
+                                menu[i].children[j].children.push({ key: result[i].subMenus[j].tabs[h].id, icon: null, children: [], label: result[i].subMenus[j].tabs[h].label, type: null })
+                            }
+                        }
                     }
                 }
-                setItems(result)
+                console.log(menu[0].children)
+                setItems(menu)
+                // for (let i = 0; i < result.length; i++) {
+                //     setRootSubmenuKeys(prev => [...prev, result[i].key])
+                //     //TODO: get count from back-end
+                //     result[i].icon = <DotedBadget count={45} icon={CustomIcon(result[i].icon)} />
+                //     for (let j = 0; j < result[i].children.length; j++) {
+                //         //TODO: key should be change
+                //         result[i].children[j].onClick = () => props.changeNumber(i * j + parseInt(result[i].children[j].key))
+                //     }
+                // }
+                // setItems(result)
             }
         });
     }, []);
