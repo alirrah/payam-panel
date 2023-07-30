@@ -49,29 +49,19 @@ function SidebarMenu(props) {
             if (response.status === 200) {
                 let result = response.data.result;
                 let menu = [];
-                for (let i = 0; i < result.length; i++) {
-                    menu.push({ key: result[i].order, icon: null, children: [], label: result[i].label, type: null })
-                    for (let j = 0; j < result[i].subMenus.length; j++) {
-                        menu[i].children.push({ key: result[i].subMenus[j].order, icon: null, children: [], label: result[i].subMenus[j].label, type: null });
-                        if (result[i].subMenus[j].useAjaxTabs) {
-                            for (let h = 0; h < result[i].subMenus[j].tabs.length; h++) {
-                                menu[i].children[j].children.push({ key: result[i].subMenus[j].tabs[h].id, icon: null, children: [], label: result[i].subMenus[j].tabs[h].label, type: null })
-                            }
-                        }
-                    }
-                }
+                result.forEach((item) => {
+                    menu.push({ key: item.order, icon: null, children: [], label: item.label, type: null })
+                    item.subMenus.forEach((subitem) => {
+                        menu[menu.length - 1].children.push({ key: subitem.order, icon: null, children: [], label: subitem.label, type: null })
+                         if (subitem.useAjaxTabs) {
+                             subitem.tabs.forEach((tab) => {
+                                 menu[menu.length - 1].children[menu[menu.length - 1].children.length - 1].children.push({ key: tab.id, icon: null, children: [], label: tab.label, type: null })
+                             })
+                         }
+                    })
+                });
                 console.log(menu[0].children)
                 setItems(menu)
-                // for (let i = 0; i < result.length; i++) {
-                //     setRootSubmenuKeys(prev => [...prev, result[i].key])
-                //     //TODO: get count from back-end
-                //     result[i].icon = <DotedBadget count={45} icon={CustomIcon(result[i].icon)} />
-                //     for (let j = 0; j < result[i].children.length; j++) {
-                //         //TODO: key should be change
-                //         result[i].children[j].onClick = () => props.changeNumber(i * j + parseInt(result[i].children[j].key))
-                //     }
-                // }
-                // setItems(result)
             }
         });
     }, []);
