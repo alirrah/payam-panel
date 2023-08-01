@@ -17,9 +17,6 @@ function SidebarMenu(props) {
         if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
             setOpenKeys(keys);
         } else {
-            /* open and close itslef */
-            /*setOpenKeys(prev => (latestOpenKey ? [...prev, latestOpenKey] : []));*/
-            /* open itself and close others */
             setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
         }
     };
@@ -44,14 +41,19 @@ function SidebarMenu(props) {
                 let root = [];
                 result.forEach((item) => {
                     root.push(item.order.toString());
-                    menu.push({ key: item.order, icon: <DotedBadget count={item.order} icon={CustomIcon('TagOutlined')}/>, children: [], label: item.label, type: null })
+                    menu.push({ key: item.order, icon: <DotedBadget count={item.order} icon={CustomIcon('TagOutlined')} />, children: [], label: item.label, type: null })
                     item.subMenus.forEach((subitem) => {
                         //TODO: key is not true
-                        menu[menu.length - 1].children.push({ key: parseInt(menu.length.toString() + menu[menu.length - 1].children.length.toString()) * 3, icon: null, children: null, label: subitem.label, type: null, onClick: () => {navigate(subitem.url)} })
-                        if (subitem.useAjaxTabs) {
-                        }
+                        menu[menu.length - 1].children.push({
+                            key: parseInt(menu.length.toString() + menu[menu.length - 1].children.length.toString()) * 3, icon: null, children: null, label: subitem.label, type: null, onClick: () => {
+                                if (subitem.useAjaxTabs) {
+                                    props.changeNumber(subitem.tabs)
+                                }
+                                navigate(subitem.url);
+                            }
+                        })
                     })
-                    if(item.subMenus.length === 0){
+                    if (item.subMenus.length === 0) {
                         menu[menu.length - 1].children = null
                     }
                 });
@@ -60,7 +62,7 @@ function SidebarMenu(props) {
             }
         }).catch(error => {
             console.log(error)
-         });
+        });
     }, []);
 
     return (

@@ -8,16 +8,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  const [number, setNumber] = useState(1);
+  const [tab, setTab] = useState([]);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="*" element={
           <>
-            <pageContext.Provider value={number}>
-              <SidebarMenu number={number} changeNumber={(key) => {
-                setNumber(key)
+            <pageContext.Provider value={tab}>
+              <SidebarMenu changeNumber={(tab) => {
+                setTab(tab);
               }} />
 
               <section className='main'>

@@ -1,10 +1,22 @@
 import TabPage from "./tabpageone";
 import PageContext from './context';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 function Content() {
 
-    const number = useContext(PageContext);
+    const [tab, setTab] = useState([]);
+    const tabs = useContext(PageContext);
+
+
+    useEffect(() => {
+        let tab = [];
+        console.log(tabs);
+        tabs.forEach((item) => {
+            tab.push({ key: item.id, label: item.label })
+        });
+        setTab(tab);
+    }, [tabs]);
+
     const itemsone = [
         {
             key: 1,
@@ -36,23 +48,10 @@ function Content() {
         },
     ];
 
-    const itemstwo = [
-        {
-            key: 1,
-            label: 'تست نویسی',
-        },
-        {
-            key: 2,
-            label: 'گزارش گیری',
-        },
-    ];
 
     return (
         <>
-            {number === 1 ?
-                <TabPage items={itemsone} /> :
-                <TabPage items={itemstwo} />
-            }
+            <TabPage items={tab} />
         </>
     )
 }
