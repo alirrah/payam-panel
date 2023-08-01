@@ -3,12 +3,14 @@ import { Menu } from 'antd';
 import DotedBadget from './doted-badge';
 import axios from "axios";
 import * as AntdIcons from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 
 function SidebarMenu(props) {
 
     const [openKeys, setOpenKeys] = useState([]);
     const [rootSubmenuKeys, setRootSubmenuKeys] = useState([]);
     const [items, setItems] = useState();
+    const navigate = useNavigate();
 
     const onOpenChange = (keys) => {
         const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
@@ -21,16 +23,6 @@ function SidebarMenu(props) {
             setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
         }
     };
-
-    function getItem(label, key, icon, children, type) {
-        return {
-            key,
-            icon,
-            children,
-            label,
-            type,
-        };
-    }
 
     const CustomIcon = (type) => {
         const AntdIcon = AntdIcons[type]
@@ -49,21 +41,26 @@ function SidebarMenu(props) {
             if (response.status === 200) {
                 let result = response.data.result;
                 let menu = [];
+                let root = [];
                 result.forEach((item) => {
-                    menu.push({ key: item.order, icon: null, children: [], label: item.label, type: null })
+                    root.push(item.order.toString());
+                    menu.push({ key: item.order, icon: <DotedBadget count={item.order} icon={CustomIcon('TagOutlined')}/>, children: [], label: item.label, type: null })
                     item.subMenus.forEach((subitem) => {
-                        menu[menu.length - 1].children.push({ key: subitem.order, icon: null, children: [], label: subitem.label, type: null })
-                         if (subitem.useAjaxTabs) {
-                             subitem.tabs.forEach((tab) => {
-                                 menu[menu.length - 1].children[menu[menu.length - 1].children.length - 1].children.push({ key: tab.id, icon: null, children: [], label: tab.label, type: null })
-                             })
-                         }
+                        //TODO: key is not true
+                        menu[menu.length - 1].children.push({ key: parseInt(menu.length.toString() + menu[menu.length - 1].children.length.toString()) * 3, icon: null, children: null, label: subitem.label, type: null, onClick: () => {navigate(subitem.url)} })
+                        if (subitem.useAjaxTabs) {
+                        }
                     })
+                    if(item.subMenus.length === 0){
+                        menu[menu.length - 1].children = null
+                    }
                 });
-                console.log(menu[0].children)
-                setItems(menu)
+                setRootSubmenuKeys(root);
+                setItems(menu);
             }
-        });
+        }).catch(error => {
+            console.log(error)
+         });
     }, []);
 
     return (
