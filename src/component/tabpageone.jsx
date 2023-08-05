@@ -1,22 +1,30 @@
 import { Breadcrumb, Button, Tabs } from 'antd';
 import { PlusOutlined, ReloadOutlined, DownloadOutlined, SaveOutlined, FilterOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function TabPage(props) {
 
-    const [title, setTitle] = useState("")
-    
+    const [title, setTitle] = useState('');
+    const [actived, setActived] = useState('');
+
+    useEffect(() => {
+        setTitle(props.inital.label);
+        setActived(props.inital.id);
+    }, [props]);
+
+
     const onChange = (key) => {
         props.items.forEach((item) => {
-            if(item.key === key){
+            if (item.key === key) {
                 setTitle(item.label)
+                setActived(item.key)
             }
         })
     };
 
     return (
         <section className="content">
-            <Tabs defaultActiveKey="1" items={props.items} onChange={onChange} />
+            <Tabs activeKey={actived} items={props.items} onChange={onChange} />
 
             <section className="tabPage" >
                 <h1>{title}</h1>

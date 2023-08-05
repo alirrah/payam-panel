@@ -66,7 +66,7 @@ function SidebarMenu(props) {
                 setRootSubmenuKeys(root);
                 setItems(menu);
                 menu[0].children[0].onClick();
-
+                props.changeNumber(result[0].subMenus[0].tabs);
             }
         }).catch(error => {
             console.log(error)

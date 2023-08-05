@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="*" element={
           <>
-            <pageContext.Provider value={tab}>
+            <pageContext.Provider value={{"tabs": tab, "inital": (tab[0] === undefined) ? {label: "", key:""} : tab[0]}}>
               <SidebarMenu changeNumber={(tab) => {
                 setTab(tab);
               }} />
