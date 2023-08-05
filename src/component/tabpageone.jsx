@@ -1,19 +1,10 @@
 import { Breadcrumb, Button, Tabs } from 'antd';
 import { PlusOutlined, ReloadOutlined, DownloadOutlined, SaveOutlined, FilterOutlined } from '@ant-design/icons';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function TabPage(props) {
 
     const [title, setTitle] = useState("")
-
-    useEffect(()=>{
-        try {
-            console.log(props.items[0].label)
-        } catch (error) {
-            console.log(error)
-        }
-    },[])
-
     
     const onChange = (key) => {
         props.items.forEach((item) => {

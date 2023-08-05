@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function SidebarMenu(props) {
 
     const [openKeys, setOpenKeys] = useState([]);
+    const [defaultKeys, setDefaultKeys] = useState([]);
     const [rootSubmenuKeys, setRootSubmenuKeys] = useState([]);
     const [items, setItems] = useState();
     const navigate = useNavigate();
@@ -57,8 +58,15 @@ function SidebarMenu(props) {
                         menu[menu.length - 1].children = null
                     }
                 });
+                setDefaultKeys([
+                    menu[0].key.toString(),
+                    menu[0].children[0].key.toString(),
+                ]);
+                setOpenKeys([menu[0].key.toString()]);
                 setRootSubmenuKeys(root);
                 setItems(menu);
+                menu[0].children[0].onClick();
+
             }
         }).catch(error => {
             console.log(error)
@@ -66,18 +74,20 @@ function SidebarMenu(props) {
     }, []);
 
     return (
-        <section className='sidebar'>
-            <img src={require('./../image/logo512.png')} alt="ravin logo" />
-            <Menu
-                className='menu'
-                mode='inline'
-                openKeys={openKeys}
-                onOpenChange={onOpenChange}
-                items={items}
-            />
+        <section className="sidebar">
+            <img src={require("./../image/logo512.png")} alt="ravin logo" />
+            {items && (
+                <Menu
+                    className="menu"
+                    defaultSelectedKeys={defaultKeys}
+                    mode="inline"
+                    openKeys={openKeys}
+                    onOpenChange={onOpenChange}
+                    items={items}
+                />
+            )}
         </section>
-
-    )
+    );
 }
 
 export default SidebarMenu;

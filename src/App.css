@@ -205,6 +205,10 @@ body,
     border-radius: 0 10px 0;
 }
 
+.content .ant-tabs-nav{
+    height: 46px;
+}
+
 .content .ant-tabs-tab:first-child {
     margin: 0 10px 0 32px !important;
     padding: 0 16px !important;
