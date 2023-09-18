@@ -10,7 +10,7 @@ function Content() {
     useEffect(() => {
         let tab = [];
         tabs.tabs.forEach((item) => {
-            tab.push({ key: item.id, label: item.label })
+            tab.push({ key: item.key, label: item.label })
         });
         setTab(tab);
     }, [tabs]);

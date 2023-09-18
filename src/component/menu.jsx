@@ -41,22 +41,33 @@ function SidebarMenu(props) {
                 let menu = [];
                 let root = [];
                 result.forEach((item) => {
-                    root.push(item.order.toString());
-                    menu.push({ key: item.order, icon: <DotedBadget count={item.order} icon={CustomIcon('TagOutlined')} />, children: [], label: item.label, type: null })
-                    item.subMenus.forEach((subitem) => {
+                    root.push(item.key);
+                    menu.push({ key: item.key, icon: <DotedBadget count={item.order} icon={CustomIcon('TagOutlined')} />, children: [], label: item.label, type: null })
+                    item.children.forEach((subitem) => {
                         //TODO: key is not true
                         menu[menu.length - 1].children.push({
-                            key: parseInt(menu.length.toString() + menu[menu.length - 1].children.length.toString()) * 3, icon: null, children: null, label: subitem.label, type: null, onClick: () => {
-                                if (subitem.useAjaxTabs) {
-                                    props.changeNumber(subitem.tabs)
-                                }
-                                navigate(subitem.url);
+                            key: subitem.key, icon: null, children: null, label: subitem.label, type: null, onClick: () => {
+                                props.changeNumber([
+                                    {
+                                      key: '1',
+                                      label: 'Tab 1',
+                                      children: 'Content of Tab Pane 1',
+                                    },
+                                    {
+                                      key: '2',
+                                      label: 'Tab 2',
+                                      children: 'Content of Tab Pane 2',
+                                    },
+                                    {
+                                      key: '3',
+                                      label: 'Tab 3',
+                                      children: 'Content of Tab Pane 3',
+                                    },
+                                  ])
+                                navigate(subitem.key);
                             }
                         })
                     })
-                    if (item.subMenus.length === 0) {
-                        menu[menu.length - 1].children = null
-                    }
                 });
                 setDefaultKeys([
                     menu[0].key.toString(),
@@ -66,7 +77,20 @@ function SidebarMenu(props) {
                 setRootSubmenuKeys(root);
                 setItems(menu);
                 menu[0].children[0].onClick();
-                props.changeNumber(result[0].subMenus[0].tabs);
+                props.changeNumber([
+                    {
+                      key: 1,
+                      label: 'Tab 1',
+                    },
+                    {
+                      key: 2,
+                      label: 'Tab 2',
+                    },
+                    {
+                      key: 3,
+                      label: 'Tab 3',
+                    },
+                  ]);
             }
         }).catch(error => {
             console.log(error)
